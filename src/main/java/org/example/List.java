@@ -99,23 +99,38 @@ public class List<T> {
         return (count == 0);
     }
     public boolean findElem(T elem) {
-        Node<T> _node = start;
-        for (int i = 0; i < count; i++) {
+        Node<T> _node;
+        for (_node = start; _node != null; _node = _node.next) {
             if (Objects.equals(_node.value, elem)) {
                 return true;
             }
-            _node = _node.next;
         }
         return false;
     }
-    public int index(T elem) {
-        Node<T> _node = start;
-        for (int i = 0; i < count; i++) {
+    public int getIndex(T elem) {
+        int result = 0;
+        Node<T> _node;
+        for (_node = start; _node != null; _node = _node.next) {
             if (Objects.equals(_node.value, elem)) {
-                return i;
+                return result;
             }
-            _node = _node.next;
+            ++result;
         }
         return -1;
+    }
+    @Override
+    public String toString() {
+        if (start == null) {
+            return "List is empty";
+        }
+        String result = "";
+        Node<T> _node;
+        for (_node = start; _node != null; _node = _node.next) {
+            result += _node.value;
+            if (_node.next != null) {
+                result += " ";
+            }
+        }
+        return result;
     }
 }
