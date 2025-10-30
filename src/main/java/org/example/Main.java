@@ -1,5 +1,13 @@
 package org.example;
 
+/**
+ * Класс для демонстрации методов класса List,
+ * показыающий работа всвех методов на списках,
+ * составленных из элементов различных типов данных
+ * @author Егор
+ * @version 1.0
+ */
+
 public class Main {
     public static void main(String[] args) {
         List<Integer> firstList = new List<>();
@@ -19,6 +27,7 @@ public class Main {
         System.out.println("Index of the element 2 in the list: " + firstList.getIndex(2));
         firstList.clear();
         System.out.println("List after deleting all the elements: " + firstList);
+        System.out.println("List is empty: " + firstList.isEmpty());
         List<String> secondList = new List<>();
         System.out.println(secondList);
         secondList.addElem("abc");
@@ -27,5 +36,9 @@ public class Main {
         System.out.println("Index of the element \"cde\" in the list: " + secondList.getIndex("cde"));
         secondList.remove(0);
         System.out.println("List after deleting element with index 0: " + secondList);
+        System.out.println("Value of the element with index 0: " + secondList.getValue(0));
+        secondList.addElem("efg");
+        System.out.println("List after adding element \"efg\": " + secondList);
+        System.out.println("Value of the last element in the list: " + secondList.getValueOfLastElem());
     }
 }
