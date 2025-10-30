@@ -43,4 +43,32 @@ public class List<T> {
         }
         ++count;
     }
+    public void remove(int index) {
+        if (index < 0 || index >= count) {
+            throw new IndexOutOfBoundsException(index);
+        }
+        if (index == 0) {
+            start = start.next;
+            if (start == null) {
+                end = null;
+            }
+        }
+        else {
+            Node<T> _node = start;
+            for (int i = 0; i < index - 1; i++) {
+                _node = _node.next;
+            }
+            if (_node.next == end) {
+                end = _node;
+            }
+            _node.next = _node.next.next;
+        }
+        --count;
+    }
+    public void removeAtTheBeginning() {
+        start = start.next;
+        if (start == null) {
+            end = null;
+        }
+    }
 }
