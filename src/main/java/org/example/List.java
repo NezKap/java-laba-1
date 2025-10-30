@@ -71,4 +71,20 @@ public class List<T> {
             end = null;
         }
     }
+    public T getValue(int index) {
+        if (index < 0 || index >= count) {
+            throw new IndexOutOfBoundsException(index);
+        }
+        Node<T> _node = start;
+        for (int i = 0; i < index; i++) {
+            _node = _node.next;
+        }
+        return _node.value;
+    }
+    public T getValueOfLastElem() {
+        if (end == null) {
+            throw new IllegalStateException("List is empty");
+        }
+        return end.value;
+    }
 }
