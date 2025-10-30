@@ -121,7 +121,7 @@ public class List<T> {
     @Override
     public String toString() {
         if (start == null) {
-            return "List is empty";
+            return "Empty list";
         }
         String result = "";
         Node<T> _node;
