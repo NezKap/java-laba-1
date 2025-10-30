@@ -14,4 +14,9 @@ public class List<T> {
     private Node<T> start;
     private Node<T> end;
     private int count;
+    public List() {
+        start = null;
+        end = null;
+        count = 0;
+    }
 }
