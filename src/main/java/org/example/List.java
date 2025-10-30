@@ -71,6 +71,11 @@ public class List<T> {
             end = null;
         }
     }
+    public void clear() {
+        start = null;
+        end = null;
+        count = 0;
+    }
     public T getValue(int index) {
         if (index < 0 || index >= count) {
             throw new IndexOutOfBoundsException(index);
@@ -87,4 +92,11 @@ public class List<T> {
         }
         return end.value;
     }
+    public int getCount() {
+        return count;
+    }
+    public boolean isEmpty() {
+        return (count == 0);
+    }
+
 }
