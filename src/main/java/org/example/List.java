@@ -98,5 +98,24 @@ public class List<T> {
     public boolean isEmpty() {
         return (count == 0);
     }
-
+    public boolean findElem(T elem) {
+        Node<T> _node = start;
+        for (int i = 0; i < count; i++) {
+            if (Objects.equals(_node.value, elem)) {
+                return true;
+            }
+            _node = _node.next;
+        }
+        return false;
+    }
+    public int index(T elem) {
+        Node<T> _node = start;
+        for (int i = 0; i < count; i++) {
+            if (Objects.equals(_node.value, elem)) {
+                return i;
+            }
+            _node = _node.next;
+        }
+        return -1;
+    }
 }
