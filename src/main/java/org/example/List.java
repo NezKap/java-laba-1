@@ -19,4 +19,28 @@ public class List<T> {
         end = null;
         count = 0;
     }
+    public void addElem(T elem) {
+        Node<T> _node = new Node<>(elem);
+        if (start == null) {
+            start = _node;
+            end = _node;
+        }
+        else {
+            end.next = _node;
+            end = _node;
+        }
+        ++count;
+    }
+    public void addToTheBeginning(T elem) {
+        Node<T> _node = new Node<>(elem);
+        if (start == null) {
+            start = _node;
+            end = _node;
+        }
+        else {
+            _node.next = start;
+            start = _node;
+        }
+        ++count;
+    }
 }
